@@ -1,5 +1,5 @@
 import unittest
-from main import split_nodes_delimiter
+from transformnodes import split_nodes_delimiter
 from textnode import TextNode, TextType
 
 class TestSplitNodes(unittest.TestCase):
