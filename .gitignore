@@ -4,3 +4,4 @@ __pycache__/
 pyenv.cfg
 /lib64
 *swp
+/public
