@@ -5,3 +5,4 @@ pyenv.cfg
 /lib64
 *swp
 /public
+/static

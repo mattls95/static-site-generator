@@ -1,6 +1,6 @@
 import os
 import shutil
-from page_generator import generate_page
+from page_generator import generate_pages_recursive, generate_page
 
 def delete_dir(destination_path):
     if os.path.exists(destination_path):
@@ -34,6 +34,7 @@ def main():
     from_path = "/home/mattls/workspace/github.com/mattls95/static-site-generator/content/index.md"
     template_path = "/home/mattls/workspace/github.com/mattls95/static-site-generator/template.html"
     destination_path = "/home/mattls/workspace/github.com/mattls95/static-site-generator/public/index.html"
-    generate_page(from_path, template_path, destination_path)
+    #generate_page(from_path, template_path, destination_path)
+    generate_pages_recursive()
 
 main()
