@@ -1,5 +1,6 @@
 import os
 import shutil
+import sys
 from page_generator import generate_pages_recursive, generate_page
 
 def delete_dir(destination_path):
@@ -27,14 +28,14 @@ def copy_dir(destination_path, source_path):
 
 
 def main():
-    public_path = "/home/mattls/workspace/github.com/mattls95/static-site-generator/public"
+    if len(sys.argv) == 1:
+        base_path = "/"
+    else:
+        base_path = sys.argv[1]
+    public_path = "/home/mattls/workspace/github.com/mattls95/static-site-generator/docs"
     static_path = "/home/mattls/workspace/github.com/mattls95/static-site-generator/static"
     delete_dir(public_path)
     copy_dir(public_path, static_path)
-    from_path = "/home/mattls/workspace/github.com/mattls95/static-site-generator/content/index.md"
-    template_path = "/home/mattls/workspace/github.com/mattls95/static-site-generator/template.html"
-    destination_path = "/home/mattls/workspace/github.com/mattls95/static-site-generator/public/index.html"
-    #generate_page(from_path, template_path, destination_path)
-    generate_pages_recursive()
+    generate_pages_recursive(base_path=base_path)
 
 main()
